@@ -1,0 +1,7 @@
+{
+  "name": "Copy of Xander Assist",
+  "description": "A sophisticated personal AI assistant for Mr. Swaastik.S, featuring advanced reasoning and voice capabilities.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
