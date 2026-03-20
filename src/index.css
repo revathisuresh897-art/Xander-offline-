@@ -6,9 +6,9 @@
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
   --font-display: "Anton", sans-serif;
   
-  --color-xander-bg: #000000;
+  --color-xander-bg: #030303;
   --color-xander-card: #0a0a0a;
-  --color-xander-accent: #ffffff;
+  --color-xander-accent: #00f0ff;
   --color-xander-text: #ffffff;
   --color-xander-muted: #888888;
 }
@@ -16,7 +16,7 @@
 @layer base {
   body {
     @apply bg-xander-bg text-xander-text font-sans antialiased overflow-hidden;
-    background-image: radial-gradient(circle at 50% 0%, #111111 0%, #000000 70%);
+    background-image: radial-gradient(circle at 50% 0%, #1a1a2e 0%, #030303 70%);
     background-attachment: fixed;
   }
 }
@@ -26,15 +26,15 @@
 }
 
 .neon-glow {
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
 }
 
 .neon-border {
-  border-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(0, 240, 255, 0.3);
 }
 
 .neon-text {
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
 }
 
 .noise-overlay {
@@ -47,8 +47,8 @@
 .cyber-grid {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 240, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.05) 1px, transparent 1px);
   mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 80%, transparent 100%);
   pointer-events: none;
 }
@@ -61,7 +61,7 @@
 
 .animate-scanline {
   animation: scanline 6s linear infinite;
-  background: linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.05) 50%, transparent);
+  background: linear-gradient(to bottom, transparent, rgba(0, 240, 255, 0.15) 50%, transparent);
   height: 150px;
   width: 100%;
   position: absolute;
@@ -72,8 +72,8 @@
 }
 
 @keyframes pulse-orb {
-  0%, 100% { transform: scale(1); opacity: 0.8; filter: blur(2px); box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); }
-  50% { transform: scale(1.1); opacity: 1; filter: blur(4px); box-shadow: 0 0 25px rgba(255, 255, 255, 0.4); }
+  0%, 100% { transform: scale(1); opacity: 0.8; filter: blur(2px); box-shadow: 0 0 15px rgba(0, 240, 255, 0.4); }
+  50% { transform: scale(1.1); opacity: 1; filter: blur(4px); box-shadow: 0 0 25px rgba(0, 240, 255, 0.8); }
 }
 
 .animate-pulse-orb {

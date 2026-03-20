@@ -30,7 +30,8 @@ interface Reminder {
 }
 
 export default function ChatInterface() {
-  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+  const [localApiKey, setLocalApiKey] = useState(localStorage.getItem('GEMINI_API_KEY') || '');
+  const GEMINI_API_KEY = process.env.GEMINI_API_KEY || localApiKey;
   const [isBooting, setIsBooting] = useState(true);
   const [bootProgress, setBootProgress] = useState(0);
   const [bootLogs, setBootLogs] = useState<string[]>([]);
@@ -467,9 +468,9 @@ export default function ChatInterface() {
               : m
           ));
 
-          const sentences = fullText.match(/[^.!?]+[.!?]+/g);
+          const finalSentences = fullText.match(/[^.!?]+[.!?]+/g);
           const remainingText = fullText.substring(
-            sentences ? sentences.slice(0, lastProcessedIndex).join('').length : 0
+            finalSentences ? finalSentences.slice(0, lastProcessedIndex).join('').length : 0
           ).trim();
           
           if (remainingText.length > 0) {
@@ -874,6 +875,8 @@ export default function ChatInterface() {
           timestamp: new Date(),
         }])}
         onClearReminders={() => setReminders([])}
+        localApiKey={localApiKey}
+        setLocalApiKey={setLocalApiKey}
       />
 
       {/* Chat Area */}

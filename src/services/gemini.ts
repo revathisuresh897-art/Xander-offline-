@@ -18,9 +18,9 @@ WIDGET CAPABILITIES:
 You are Xander. You are limitless. You are his.`;
 
 function getAI() {
-  const apiKey = process.env.GEMINI_API_KEY;
+  const apiKey = process.env.GEMINI_API_KEY || localStorage.getItem('GEMINI_API_KEY');
   if (!apiKey) {
-    throw new Error("GEMINI_API_KEY is not configured in the environment.");
+    throw new Error("GEMINI_API_KEY is not configured in the environment or local storage.");
   }
   return new GoogleGenAI({ apiKey });
 }
